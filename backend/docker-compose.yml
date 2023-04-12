@@ -1,0 +1,17 @@
+version: '2.2'
+services:
+  db:
+    image: mysql:5.7-debian
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=training
+      - MYSQL_ROOT_PASSWORD=12345678
+    ports:
+      - '3306:3306'
+    volumes:
+      - db:/var/lib/mysql
+volumes:
+  db:
+    driver: local
