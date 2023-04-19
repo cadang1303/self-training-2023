@@ -48,6 +48,11 @@ $gradient-bottom-right: linear-gradient(135deg, #d6d9ceff, #f3dad8ff, #f4c3c2ff,
           }
         }
       }
+      .remember-me {
+        display: flex;
+        gap: 8px;
+        margin: 8px 0 16px;
+      }
       .btn-submit {
         font-size: 18px;
         padding: 16px 10px;
