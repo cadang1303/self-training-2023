@@ -6,12 +6,15 @@ import { store } from './redux/store'
 import App from './App'
 import './index.css'
 import 'normalize.css'
+import { ToastProvider } from './components/notifications/ToastProvider'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <ToastProvider>
+          <App />
+        </ToastProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>

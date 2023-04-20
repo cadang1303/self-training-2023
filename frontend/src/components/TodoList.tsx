@@ -4,6 +4,7 @@ import Modal from '@/components/modals/Modal'
 import Loading from './loader-spinner/Loading'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { setLoading } from './loader-spinner/loading.slice'
+import { useToast } from './notifications'
 
 interface Todo {
   id: string | number
@@ -17,6 +18,7 @@ const TodoList = () => {
   const [isOpen, setIsOpen] = useState(false)
   const isLoading = useAppSelector((state) => state.loading.isLoading)
   const dispatch = useAppDispatch()
+  const toast = useToast()
 
   const handleInput = useCallback((e: { target: { value: string } }) => {
     setTextInput(e.target.value)
@@ -73,6 +75,15 @@ const TodoList = () => {
         {todoList.map((todo) => (
           <TodoItem key={todo.id} todo={todo} handleDelete={handleDeleteTodo} handleStatus={handleStatusTodo} />
         ))}
+      </div>
+      <div className='btn-toast'>
+        <button
+          onClick={() => {
+            toast.open('erererkoaskfdoksadof')
+          }}
+        >
+          On Toast
+        </button>
       </div>
     </div>
   )
